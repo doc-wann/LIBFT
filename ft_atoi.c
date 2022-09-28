@@ -6,7 +6,7 @@
 /*   By: hdaniele <hdaniele@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 00:19:34 by hdaniele          #+#    #+#             */
-/*   Updated: 2022/09/27 14:39:18 by hdaniele         ###   ########.fr       */
+/*   Updated: 2022/09/28 19:32:59 by hdaniele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	ft_atoi(const char *str)
 		str = &str[1];
 	if (ft_strncmp(str, "-2147483648", 12) == 0)
 		return (-2147483648);
-	if (ft_strncmp(str, "+2147483647", 11) == 0 || ft_strncmp(str, "2147483647", 10) == 0)
+	if (ft_strncmp(str, "+2147483647", 11) == 0
+		|| ft_strncmp(str, "2147483647", 10) == 0)
 		return (2147483647);
 	if (str[x] == 45)
 		return (-1 * (atoi_looper(str, x)));

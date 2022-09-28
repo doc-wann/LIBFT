@@ -6,7 +6,7 @@
 /*   By: hdaniele <hdaniele@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 19:54:42 by hdaniele          #+#    #+#             */
-/*   Updated: 2022/09/27 18:21:10 by hdaniele         ###   ########.fr       */
+/*   Updated: 2022/09/28 19:31:11 by hdaniele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,8 @@ int	ft_count(int n)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+void	ft_alloc(size_t len, char *x, int n)
 {
-	char	*x;
-	size_t		len;
-
-	if (n == -2147483648)
-	{
-		x = ft_strdup("-2147483648");
-		return(x);
-	}
-	len = ft_count(n);
-	x = malloc(sizeof(char) * len + 1);
-	if (!x)
-		return (NULL);
 	x[len] = '\0';
 	if (n < 0)
 	{
@@ -56,6 +44,23 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		len--;
 	}
+}
+
+char	*ft_itoa(int n)
+{
+	char	*x;
+	size_t	len;
+
+	if (n == -2147483648)
+	{
+		x = ft_strdup("-2147483648");
+		return (x);
+	}
+	len = ft_count(n);
+	x = malloc(sizeof(char) * len + 1);
+	if (!x)
+		return (NULL);
+	ft_alloc(len, x, n);
 	return (x);
 }
 

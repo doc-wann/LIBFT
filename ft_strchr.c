@@ -6,7 +6,7 @@
 /*   By: hdaniele <hdaniele@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 21:29:20 by hdaniele          #+#    #+#             */
-/*   Updated: 2022/09/24 18:50:01 by hdaniele         ###   ########.fr       */
+/*   Updated: 2022/09/28 19:34:11 by hdaniele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *str, int c)
 {
 	int	count;
-	
+
 	while (c > 255)
 		c = c - 256;
 	count = 0;

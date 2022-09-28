@@ -6,7 +6,7 @@
 /*   By: hdaniele <hdaniele@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 19:54:42 by hdaniele          #+#    #+#             */
-/*   Updated: 2022/09/19 21:39:25 by hdaniele         ###   ########.fr       */
+/*   Updated: 2022/09/27 18:21:10 by hdaniele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,13 @@ int	ft_count(int n)
 char	*ft_itoa(int n)
 {
 	char	*x;
-	int		len;
+	size_t		len;
 
+	if (n == -2147483648)
+	{
+		x = ft_strdup("-2147483648");
+		return(x);
+	}
 	len = ft_count(n);
 	x = malloc(sizeof(char) * len + 1);
 	if (!x)
@@ -43,8 +48,6 @@ char	*ft_itoa(int n)
 		x[0] = '-';
 		n = n * -1;
 	}
-	if (n == -2147483648)
-		x = "-2147483648\0";
 	if (n == 0)
 		x[0] = 48;
 	while (len >= 0 && n > 0)
@@ -56,14 +59,14 @@ char	*ft_itoa(int n)
 	return (x);
 }
 
-//int	main(void)
-//{
-//	int	x = -2147483648;
-//	char	*y;
-//
-//	y = ft_itoa(x);
-//	printf("%i", x);
-//	printf("\n");
-//	printf("%s", y);
-//	printf("\n");
-//}
+// int	main(void)
+// {
+// 	int	x = -2147483648;
+// 	char	*y;
+
+// 	y = ft_itoa(x);
+// 	printf("%i", x);
+// 	printf("\n");
+// 	printf("%s", y);
+// 	printf("\n");
+// }

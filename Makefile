@@ -38,6 +38,7 @@ FILES = ft_isalnum \
 	ft_putendl_fd \
 	ft_putnbr_fd \
 	ft_striteri \
+	ft_strdup \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

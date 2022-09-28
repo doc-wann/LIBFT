@@ -6,7 +6,7 @@
 /*   By: hdaniele <hdaniele@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 00:19:34 by hdaniele          #+#    #+#             */
-/*   Updated: 2022/09/22 00:05:32 by hdaniele         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:39:18 by hdaniele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,26 +48,26 @@ int	ft_atoi(const char *str)
 
 	x = 0;
 	mult = 1;
-	if (ft_strncmp(str, "-2147483648", 12) == 0)
-		return (-2147483648);
-	if (ft_strncmp(str, "2147483647", 12) == 0)
-		return (2147483647);
 	while (str[x] == ' ' || str[x] == '\n' || str[x] == '\t'
 		|| str[x] == '\v' || str[x] == '\f' || str[x] == '\r')
 		str = &str[1];
+	if (ft_strncmp(str, "-2147483648", 12) == 0)
+		return (-2147483648);
+	if (ft_strncmp(str, "+2147483647", 11) == 0 || ft_strncmp(str, "2147483647", 10) == 0)
+		return (2147483647);
 	if (str[x] == 45)
 		return (-1 * (atoi_looper(str, x)));
 	else
 		return (atoi_looper(&str[x], x));
 }
 
-//int	main(int argc, char *argv[])
-//{
-//	printf("MEU ATOI \n");
-//	printf("%i",ft_atoi(argv[1]));
-//	printf("\n");
-//	printf("ATOI ORIGINAL \n");
-//	printf("%i",atoi(argv[1]));
-//	printf("\n");
-//	return (0);
-//}
+// int	main(int argc, char *argv[])
+// {
+// 	printf("MEU ATOI \n");
+// 	printf("%i",ft_atoi(argv[1]));
+// 	printf("\n");
+// 	printf("ATOI ORIGINAL \n");
+// 	printf("%i",atoi(argv[1]));
+// 	printf("\n");
+// 	return (0);
+// }
